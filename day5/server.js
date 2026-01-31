@@ -1,6 +1,7 @@
 const { raw } = require("express")
 const app = require("./src/app")
 
+require("dotenv").config()
 const mongoose = require("mongoose")
 
 const connectToDB = require("./src/config/database")
