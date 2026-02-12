@@ -2,10 +2,13 @@ const mongoose = require("mongoose")
 
 const userSchema = new mongoose.Schema({
     name: String,
-    email: String,
+    email: {
+        type: String,
+        unique:[true,"This email is already registered , try another one"]
+    },
     password: String,
 })
 
-const userModel = Mongoose.model("users",userSchema)
+const userModel = mongoose.model("users",userSchema)
 
 module.exports = userModel
